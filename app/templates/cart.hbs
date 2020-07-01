@@ -1,9 +1,16 @@
 <main class="container mt-5">
   <h1>Shopping Cart</h1>
 
-  <header>
-    <LinkTo @route="index">Home</LinkTo> > <LinkTo @route="cart">Shopping Cart</LinkTo>
-  </header>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <LinkTo @route="index">Home</LinkTo>
+      </li>
+      <li class="breadcrumb-item active" aria-current="cart">
+        Shopping Cart
+      </li>
+    </ol>
+  </nav>
   <hr>
 
   <hr>
