@@ -38,7 +38,7 @@ body {
 
 .home-item {
   width: 600px;
-  height: 400px;
+  height: 420px;
   display: flex;
   overflow: hidden;
   border-radius: 10px;
@@ -68,6 +68,41 @@ body {
   justify-content: space-between;
 }
 
-.item-color {
+.item-colors input[type="radio"]{
+  display: none;
+}
 
+.item-colors input[type="radio"] ~ label {
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  border: 4px solid #FFF;
+  box-shadow: inset 0 0 2px grey;
+  position: relative;
+}
+
+.item-colors input[checked] ~ label:before {
+  width: 24px;
+  height: 24px;
+  content: ' ';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border-radius: 50%;
+}
+
+.item-colors label[for="item-color-red"] {
+  background: #e74c3c;
+}
+
+.item-colors input[checked] + label[for="item-color-red"]:before {
+  border: 1px solid #c0392b;
+}
+
+.item-colors label[for="item-color-black"] {
+  background: black;
+}
+
+.item-colors input[checked] + label[for="item-color-black"]:before {
+  border: 1px solid #2c3e50;
 }
