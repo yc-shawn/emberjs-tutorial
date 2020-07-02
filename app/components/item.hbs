@@ -1,0 +1,4 @@
+<div class="home-item {{if this.zoom "has-zoomed-image"}}">
+  <Item::Image src={{this.itemImage}} @zoom={{this.zoom}} @toggleZoom={{this.toggleZoom}} />
+  <Item::Details @color={{this.color}} @colorChanged={{this.updateColor}} />
+</div>

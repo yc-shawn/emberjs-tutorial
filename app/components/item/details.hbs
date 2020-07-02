@@ -28,14 +28,18 @@
     <div>
       <h5>Color</h5>
       <div class="item-colors">
-        <input type="radio" name="color" id="item-color-red" checked>
-        <label for="item-color-red"></label>
-        <input type="radio" name="color" id="item-color-black">
-        <label for="item-color-black"></label>
+        <span
+          class="item-color color-red {{if (eq @color "red") "color-active"}}"
+          {{on "click" (fn @colorChanged "red")}}
+        ></span>
+        <span
+          class="item-color color-black {{if (eq @color "black") "color-active"}}"
+          {{on "click" (fn @colorChanged "black")}}
+        ></span>
       </div>
     </div>
     <div>
-      <button type="button" class="btn btn-info">
+      <button type="button" class="btn btn-info" {{on "click" this.addToCart}}>
         <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i> Add to cart
       </button>
     </div>
