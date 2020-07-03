@@ -1,8 +1,11 @@
 import Component from '@glimmer/component';
 import { tracked } from "@glimmer/tracking";
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class ItemComponent extends Component {
+  @service router;
+
   @tracked color = 'red';
 
   @tracked zoom = false;
@@ -25,6 +28,13 @@ export default class ItemComponent extends Component {
 
   @action
   toggleZoom() {
-    this.zoom = !this.zoom;
+    if (this.args.isDetails) {
+      this.zoom = !this.zoom;
+    }
+  }
+
+  @action
+  onDetails() {
+    this.router.transitionTo('item', 1);
   }
 }

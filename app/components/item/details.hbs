@@ -13,35 +13,51 @@
   </section>
 
   <!-- Price -->
-  <section>
-    <del class="small text-black-50">$199.95</del> <i class="text-danger font-weight-bold">$99.98</i>
-  </section>
+  {{#if @isDetails}}
+    <section>
+      <del class="small text-black-50">$199.95</del>
+      <i class="text-danger font-weight-bold">$99.98</i>
+    </section>
+  {{else}}
+    <h4>
+      <del class="small text-black-50">$199.95</del>
+      <i class="text-danger font-weight-bold">$99.98</i>
+    </h4>
+  {{/if}}
 
-  <!-- Item description -->
-  <section>
-    <h5>Description</h5>
-    <p>With up to 40 hours of battery life, Beats Solo Wireless is your perfect everyday headphone</p>
-  </section>
+  {{#if @isDetails}}
+    <!-- Item description -->
+    <section>
+      <h5>Description</h5>
+      <p>With up to 40 hours of battery life,
+        Beats Solo Wireless is your perfect everyday headphone</p>
+    </section>
 
-  <!-- Actions -->
-  <section class="d-flex justify-content-between align-items-end">
-    <div>
-      <h5>Color</h5>
-      <div class="item-colors">
-        <span
-          class="item-color color-red {{if (eq @color "red") "color-active"}}"
-          {{on "click" (fn @colorChanged "red")}}
-        ></span>
-        <span
-          class="item-color color-black {{if (eq @color "black") "color-active"}}"
-          {{on "click" (fn @colorChanged "black")}}
-        ></span>
+    <!-- Actions -->
+    <section class="d-flex justify-content-between align-items-end">
+      <div>
+        <h5>Color</h5>
+        <div class="item-colors">
+          <span
+            class="item-color color-red {{if (eq @color "red") "color-active"}}"
+            {{on "click" (fn @colorChanged "red")}}
+          ></span>
+          <span
+            class="item-color color-black {{if (eq @color "black") "color-active"}}"
+            {{on "click" (fn @colorChanged "black")}}
+          ></span>
+        </div>
       </div>
-    </div>
-    <div>
-      <button type="button" class="btn btn-info" {{on "click" this.addToCart}}>
-        <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i> Add to cart
-      </button>
-    </div>
-  </section>
+      <div>
+        <button
+          type="button"
+          class="btn btn-info"
+          {{on "click" this.addToCart}}
+        >
+          <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
+          Add to cart
+        </button>
+      </div>
+    </section>
+  {{/if}}
 </div>
