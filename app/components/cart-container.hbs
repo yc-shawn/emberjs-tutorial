@@ -1,0 +1,7 @@
+<LinkTo @route="cart" class="home-cart">
+  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  {{#if this.cart.cartList.length}}
+    <span class="home-cart-count">{{this.cart.cartList.length}}</span>
+  {{/if}}
+</LinkTo>
+{{yield}}

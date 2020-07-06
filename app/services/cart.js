@@ -2,13 +2,14 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class CartService extends Service {
-  @tracked cart = [];
+  @tracked cartList = [];
 
   add() {
-    this.cart.push({});
+    this.cartList = [...this.cartList, {}];
+    console.log(this.cartList);
   }
 
   remove() {
-    this.cart.pop();
+    this.cartList.pop();
   }
 }

@@ -13,7 +13,37 @@
   </nav>
   <hr>
 
+  <div class="cart-item d-flex align-items-center">
+    <div class="cart-item-thumbnail">
+      <img src="/assets/images/beats-solo-red.png">
+    </div>
+    <div>
+      <h4>Beats Solo Wireless Headphones</h4>
+      <div>
+        <del class="small text-black-50">$199.95</del>
+        <i class="text-danger font-weight-bold">$99.98</i>
+      </div>
+    </div>
+    <input type="number" class="ml-auto" value={{1}}>
+    <button class="ml-3">&times;</button>
+  </div>
+
   <hr>
+
+  <div class="summary mb-5">
+    <div class="row">
+      <span class="col">Subtotal</span>
+      <span class="col">${{this.subtotal}}</span>
+    </div>
+    <div class="row">
+      <span class="col">Tax</span>
+      <span class="col">${{this.tax}}</span>
+    </div>
+    <div class="row">
+      <b class="col">Total</b>
+      <b class="col">${{this.total}}</b>
+    </div>
+  </div>
 
   <button type="button" class="btn btn-success float-right">
     Check out
