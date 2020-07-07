@@ -16,9 +16,9 @@
   {{#each cart.cartList as |item|}}
     <div class="cart-item d-flex align-items-center">
       <div class="cart-item-thumbnail">
-        <img src="/assets/images/beats-solo-red.png">
+        <img src={{item.image}}>
       </div>
-      <div>
+      <div class="ml-3">
         <h4>{{item.name}}</h4>
         <div>
           <del class="small text-black-50">${{item.price.original}}</del>
