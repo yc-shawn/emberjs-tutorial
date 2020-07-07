@@ -2,7 +2,7 @@
 
   <!-- Item Header -->
   <section>
-    <h3>Beats Solo Wireless Headphones</h3>
+    <h3>{{@item.name}}</h3>
     <div class="text-warning">
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -15,13 +15,13 @@
   <!-- Price -->
   {{#if @isDetails}}
     <section>
-      <del class="small text-black-50">$199.95</del>
-      <i class="text-danger font-weight-bold">$99.98</i>
+      <del class="small text-black-50">${{@item.price.original}}</del>
+      <i class="text-danger font-weight-bold">${{@item.price.current}}</i>
     </section>
   {{else}}
     <h4>
-      <del class="small text-black-50">$199.95</del>
-      <i class="text-danger font-weight-bold">$99.98</i>
+      <del class="small text-black-50">${{@item.price.original}}</del>
+      <i class="text-danger font-weight-bold">${{@item.price.current}}</i>
     </h4>
   {{/if}}
 
@@ -29,8 +29,7 @@
     <!-- Item description -->
     <section>
       <h5>Description</h5>
-      <p>With up to 40 hours of battery life,
-        Beats Solo Wireless is your perfect everyday headphone</p>
+      <p>{{@item.description}}</p>
     </section>
 
     <!-- Actions -->
@@ -38,14 +37,12 @@
       <div>
         <h5>Color</h5>
         <div class="item-colors">
-          <span
-            class="item-color color-red {{if (eq @color "red") "color-active"}}"
-            {{on "click" (fn @colorChanged "red")}}
-          ></span>
-          <span
-            class="item-color color-black {{if (eq @color "black") "color-active"}}"
-            {{on "click" (fn @colorChanged "black")}}
-          ></span>
+          {{#each @item.colors as |color|}}
+            <span
+              class="item-color color-{{color.color}} {{if (eq @color color.color) "color-active"}}"
+              {{on "click" (fn @colorChanged color.color)}}
+            ></span>
+          {{/each}}
         </div>
       </div>
       <div>
