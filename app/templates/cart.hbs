@@ -21,8 +21,8 @@
       <div class="ml-3">
         <h4>{{item.name}}</h4>
         <div>
-          <del class="small text-black-50">${{item.price.original}}</del>
-          <i class="text-danger font-weight-bold">${{item.price.current}}</i>
+          <del class="small text-black-50">{{currency item.price.original}}</del>
+          <i class="text-danger font-weight-bold">{{currency item.price.current}}</i>
         </div>
       </div>
       <input
@@ -39,15 +39,15 @@
   <div class="summary mb-5">
     <div class="row">
       <span class="col">Subtotal</span>
-      <span class="col">${{this.subtotal}}</span>
+      <span class="col">{{currency this.subtotal}}</span>
     </div>
     <div class="row">
       <span class="col">Tax</span>
-      <span class="col">${{this.tax}}</span>
+      <span class="col">{{currency this.tax}}</span>
     </div>
     <div class="row">
       <b class="col">Total</b>
-      <b class="col">${{this.total}}</b>
+      <b class="col">{{currency this.total}}</b>
     </div>
   </div>
 
