@@ -7,6 +7,7 @@ export default class ItemDetailsComponent extends Component {
 
   @action
   addToCart() {
-    this.cart.add();
+    const { item, color } = this.args;
+    this.cart.add(item, color);
   }
 }

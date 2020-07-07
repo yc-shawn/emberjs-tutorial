@@ -13,22 +13,28 @@
   </nav>
   <hr>
 
-  <div class="cart-item d-flex align-items-center">
-    <div class="cart-item-thumbnail">
-      <img src="/assets/images/beats-solo-red.png">
-    </div>
-    <div>
-      <h4>Beats Solo Wireless Headphones</h4>
-      <div>
-        <del class="small text-black-50">$199.95</del>
-        <i class="text-danger font-weight-bold">$99.98</i>
+  {{#each cart.cartList as |item|}}
+    <div class="cart-item d-flex align-items-center">
+      <div class="cart-item-thumbnail">
+        <img src="/assets/images/beats-solo-red.png">
       </div>
+      <div>
+        <h4>{{item.name}}</h4>
+        <div>
+          <del class="small text-black-50">${{item.price.original}}</del>
+          <i class="text-danger font-weight-bold">${{item.price.current}}</i>
+        </div>
+      </div>
+      <input
+        type="number"
+        class="ml-auto"
+        value={{item.count}}
+        {{on "change" (fn this.changeItemCount item)}}>
+      <button class="ml-3" {{on "click" (fn this.removeItem item)}}>&times;</button>
     </div>
-    <input type="number" class="ml-auto" value={{1}}>
-    <button class="ml-3">&times;</button>
-  </div>
 
-  <hr>
+    <hr>
+  {{/each}}
 
   <div class="summary mb-5">
     <div class="row">
