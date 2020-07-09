@@ -6,12 +6,12 @@ import { inject as service } from '@ember/service';
 export default class ItemComponent extends Component {
   @service router;
 
-  @tracked color = this.args.item.colors[0].color;
+  @tracked color = this.args.product.colors[0].color;
 
   @tracked zoom = false;
 
-  get itemImage() {
-    const { image } = this.args.item.colors.find(({
+  get productImage() {
+    const { image } = this.args.product.colors.find(({
       color
     }) => color === this.color);
     return image;
@@ -31,6 +31,6 @@ export default class ItemComponent extends Component {
 
   @action
   onDetails() {
-    this.router.transitionTo('item', this.args.item.id);
+    this.router.transitionTo('item', this.args.product.id);
   }
 }

@@ -1,7 +1,7 @@
 <CartContainer>
 
   <div class="item-standalone-page">
-    <Item @isDetails={{true}} @item={{this.model}}/>
+    <Product @isDetails={{true}} @product={{this.model}}/>
     <h5 class="mt-5">Features</h5>
     <ul>
       {{#each this.model.features as |feature|}}

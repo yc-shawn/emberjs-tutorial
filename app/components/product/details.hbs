@@ -2,7 +2,7 @@
 
   <!-- Item Header -->
   <section>
-    <h3>{{@item.name}}</h3>
+    <h3>{{@product.name}}</h3>
     <div class="text-warning">
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -15,13 +15,13 @@
   <!-- Price -->
   {{#if @isDetails}}
     <section>
-      <del class="small text-black-50">{{currency @item.price.original}}</del>
-      <i class="text-danger font-weight-bold">{{currency @item.price.current}}</i>
+      <del class="small text-black-50">{{currency @product.price.original}}</del>
+      <i class="text-danger font-weight-bold">{{currency @product.price.current}}</i>
     </section>
   {{else}}
     <h4>
-      <del class="small text-black-50">{{currency @item.price.original}}</del>
-      <i class="text-danger font-weight-bold">{{currency @item.price.current}}</i>
+      <del class="small text-black-50">{{currency @product.price.original}}</del>
+      <i class="text-danger font-weight-bold">{{currency @product.price.current}}</i>
     </h4>
   {{/if}}
 
@@ -29,7 +29,7 @@
     <!-- Item description -->
     <section>
       <h5>Description</h5>
-      <p>{{@item.description}}</p>
+      <p>{{@product.description}}</p>
     </section>
 
     <!-- Actions -->
@@ -37,7 +37,7 @@
       <div>
         <h5>Color</h5>
         <div class="item-colors">
-          {{#each @item.colors as |color|}}
+          {{#each @product.colors as |color|}}
             <span
               class="item-color color-{{color.color}} {{if (eq @color color.color) "color-active"}}"
               {{on "click" (fn @colorChanged color.color)}}

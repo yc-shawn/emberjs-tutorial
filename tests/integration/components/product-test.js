@@ -10,15 +10,15 @@ module('Integration | Component | item', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Item />`);
+    await render(hbs`<Product />`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <Item>
+      <Product>
         template block text
-      </Item>
+      </Product>
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

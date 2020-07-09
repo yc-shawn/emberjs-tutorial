@@ -2,15 +2,15 @@
   class="item {{if this.zoom "has-zoomed-image"}} {{if @isDetails "item-has-details"}}"
   {{on "click" this.onDetails}}
 >
-  <Item::Image
-    src={{this.itemImage}}
+  <Product::Image
+    src={{this.productImage}}
     @isDetails={{@isDetails}}
     @zoom={{this.zoom}}
     @toggleZoom={{this.toggleZoom}}
   />
-  <Item::Details
+  <Product::Details
     @isDetails={{@isDetails}}
-    @item={{@item}}
+    @product={{@product}}
     @color={{this.color}}
     @colorChanged={{this.updateColor}}
   />
