@@ -38,10 +38,8 @@ export default class CartService extends Service {
 
   remove(item) {
     const index = this.cartList.indexOf(item);
-    console.log(index);
     const cartList = this.cartList;
     cartList.splice(index, 1);
     this.cartList = cartList;
-    // this.cartList = this.cartList.splice(index, 1);
   }
 }
