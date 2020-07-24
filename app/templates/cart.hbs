@@ -1,12 +1,12 @@
 <main class="container mt-5">
   <h1>Shopping Cart</h1>
 
-  <nav aria-label="breadcrumb">
+  <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <LinkTo @route="index">Home</LinkTo>
       </li>
-      <li class="breadcrumb-item active" aria-current="cart">
+      <li class="breadcrumb-item active">
         Shopping Cart
       </li>
     </ol>
@@ -36,7 +36,7 @@
     <hr>
   {{/each}}
 
-  <div class="summary mb-5">
+  <section class="w-50 ml-auto text-right mb-5">
     <div class="row">
       <span class="col">Subtotal</span>
       <span class="col">{{currency this.subtotal}}</span>
@@ -49,7 +49,7 @@
       <b class="col">Total</b>
       <b class="col">{{currency this.total}}</b>
     </div>
-  </div>
+  </section>
 
   <button type="button" class="btn btn-success float-right">
     Check out

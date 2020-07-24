@@ -1,4 +1,4 @@
-<div class="item-details">
+<div class="product-details">
 
   <!-- Item Header -->
   <section>
@@ -36,10 +36,10 @@
     <section class="d-flex justify-content-between align-items-end">
       <div>
         <h5>Color</h5>
-        <div class="item-colors">
+        <div class="product-colors">
           {{#each @product.colors as |color|}}
             <span
-              class="item-color color-{{color.color}} {{if (eq @color color.color) "color-active"}}"
+              class="product-color color-{{color.color}} {{if (eq @color color.color) "color-active"}}"
               {{on "click" (fn @colorChanged color.color)}}
             ></span>
           {{/each}}
