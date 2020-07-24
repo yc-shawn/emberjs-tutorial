@@ -28,9 +28,4 @@ export default class ItemComponent extends Component {
       this.zoom = !this.zoom;
     }
   }
-
-  @action
-  onDetails() {
-    this.router.transitionTo('item', this.args.product.id);
-  }
 }

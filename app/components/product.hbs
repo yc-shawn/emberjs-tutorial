@@ -1,6 +1,7 @@
-<div
+<LinkTo
   class="product {{if this.zoom "has-zoomed-image"}} {{if @isDetails "product-has-details"}}"
-  {{on "click" this.onDetails}}
+  @route="item"
+  @model={{@product.id}}
 >
   <Product::Image
     src={{this.productImage}}
@@ -14,4 +15,4 @@
     @color={{this.color}}
     @colorChanged={{this.updateColor}}
   />
-</div>
+</LinkTo>
