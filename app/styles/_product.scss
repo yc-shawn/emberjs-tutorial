@@ -18,6 +18,43 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .product-color {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    border: 4px solid #fff;
+    box-shadow: inset 0 0 2px grey;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      width: 24px;
+      height: 24px;
+      content: ' ';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      border-radius: 50%;
+    }
+
+    &.color-red {
+      background: #e74c3c;
+    }
+
+    &.color-black {
+      background: black;
+    }
+  }
+
+  .active-red .color-red:before {
+    border: 1px solid #c0392b;
+  }
+
+  .active-black .color-black:before {
+    border: 1px solid #2c3e50;
+  }
 }
 
 .product {
