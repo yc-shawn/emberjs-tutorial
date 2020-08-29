@@ -1,17 +1,17 @@
 <GeneralContainer>
   <div class="product item-details-page">
     <Product::Image @src={{this.productImage}}/>
-    <Product::Details @color={{this.color}} @onChangeColor={{this.onChangeColor}}/>
+    <Product::Details
+      @name={{this.model.name}}
+      @price={{this.model.price}}
+      @colors={{this.model.colors}}
+      @color={{this.color}}
+      @onChangeColor={{this.onChangeColor}}/>
   </div>
   <h5 class="mt-5">Features</h5>
   <ul>
-    <li>High-performance wireless noise cancelling headphones in red</li>
-    <li>Active Noise Cancelling (ANC) blocks external noise</li>
-    <li>Transparency helps you stay aware of your surroundings while listening</li>
-    <li>Features the Apple H1 Headphone Chip and Class 1 Bluetooth for extended range and fewer dropouts</li>
-    <li>Compatible with iOS and Android</li>
-    <li>Hands-free controls via “Hey Siri” on iOS devices, and voice capability with the push of the b button on a variety of
-    compatible devices</li>
-    <li>Up to 22 hours of listening time (up to 40 hours with ANC and Transparency turned off)</li>
+    {{#each this.model.features as |feature|}}
+      <li>{{feature}}</li>
+    {{/each}}
   </ul>
 </GeneralContainer>
