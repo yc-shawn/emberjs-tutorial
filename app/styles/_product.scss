@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: width 0.3s ease-in-out;
 
   > img {
     max-width: 100%;
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: width 0.3s ease-in-out;
 
   .product-color {
     display: inline-block;
@@ -70,6 +72,16 @@
   &:hover {
     text-decoration: none;
     color: #333;
+  }
+
+  &.is-zoomed {
+    .product-image {
+      width: 100%;
+    }
+    .product-details {
+      width: 0;
+      padding: 0;
+    }
   }
 }
 
