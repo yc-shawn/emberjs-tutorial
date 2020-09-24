@@ -19,14 +19,20 @@
   </section>
 
   {{#if @isDetails}}
-    <div>
-      <h5>Color</h5>
-      <div class="product-colors active-{{@color}}">
-        {{#each @colors as |colorInfo|}}
-          <span class="product-color {{concat 'color-' colorInfo.color}}"
-            {{on "click" (fn @onChangeColor colorInfo.color)}}></span>
-        {{/each}}
+    <div class="d-flex justify-content-between align-items-end">
+      <div>
+        <h5>Color</h5>
+        <div class="product-colors active-{{@color}}">
+          {{#each @colors as |colorInfo|}}
+            <span class="product-color {{concat 'color-' colorInfo.color}}"
+              {{on "click" (fn @onChangeColor colorInfo.color)}}></span>
+          {{/each}}
+        </div>
       </div>
+      <button class="btn btn-info" type="button" {{on "click" this.addToCart}}>
+        <i class="fa fa-shopping-cart mr-1"></i>
+        Add to cart
+      </button>
     </div>
   {{/if}}
 </div>
