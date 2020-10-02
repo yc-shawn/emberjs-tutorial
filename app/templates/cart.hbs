@@ -10,8 +10,20 @@
   </ol>
 
   {{#each this.cart.itemList as |item|}}
-    <div class="d-flex align-items-center">
-      <h4>{{item.name}}</h4>
+    <div class="cart-item d-flex align-items-center">
+      <div class="cart-item-thumbnail">
+        <img src={{item.image}} alt="">
+      </div>
+      <div class="ml-3">
+        <h4>{{item.name}}</h4>
+        <i class="font-weight-bold">{{currency item.price}}</i>
+      </div>
+      <input
+        type="number"
+        class="ml-auto"
+        value={{item.count}}
+        {{on "input" (fn this.updateItemCount item)}}
+      >
     </div>
   {{/each}}
   <section class="w-50 ml-auto text-right mb-5">
