@@ -1,0 +1,13 @@
+<button {{on "click" (perform this.getNumberTask)}}>
+  Get random number
+</button>
+
+{{#if this.getNumberTask.isRunning}}
+<p>Loading...</p>
+{{else}}
+<h3>{{this.getNumberTask.last.value}}</h3>
+{{/if}}
+
+<i>{{if this.getNumberTask.last.isError 'Ooops!'}}</i>
+
+<button {{on "click" this.cancel}}>cancel</button>

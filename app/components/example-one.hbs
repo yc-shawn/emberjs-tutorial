@@ -1,0 +1,9 @@
+<button {{on "click" this.getRandNumber}}>
+  Get random number
+</button>
+
+{{#if this.isLoading}}
+  <p>Loading...</p>
+{{else}}
+  <h3>{{this.displayNumber}}</h3>
+{{/if}}
